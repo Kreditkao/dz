@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    string name;
+    int age;
+
+    system("chcp 1251");
+    system("cls");
+
+   
+    cout << "Як тебе звати? ";
+    cin >> name;
+
+    cout << "Привіт, " << name << "! Приємно познайомитись." << endl;
+
+    cout << "Скільки тобі років? ";
+    cin >> age;
+
+ 
+    int birthYear = 2024 - age;
+    cout << "Отже, ти народився/народилася приблизно в " << birthYear << " році." << endl;
+
+    return 0;
+}
