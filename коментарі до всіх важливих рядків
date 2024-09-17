@@ -1,0 +1,84 @@
+/* Ввід та вивід */
+
+
+
+#include <iostream> //Підключення бібліотек
+#include <string>
+
+using namespace std; //Скорочення команд std::cout
+
+void main()
+{
+	string name; //вводимо переменні
+	int age;
+
+	system("chcp 1251"); //підключення укр. мови
+	system("cls");
+
+/* ввід та вивід інформації */
+	cout << "Як тебе звати? ";
+	cin >> name;
+	cout << "Привіт, " << name << ", приємно познайомитись!\n";
+
+	printf("А скільки тобі років? ");
+	scanf_s("%i", &age); //Зчитеваємо введений вік і зберегаємо його в змінній 
+	printf("0, ти %i року народження! \n", 2024 - age); //Розрахуємо приблизний рік народження і відображаємо результат
+}
+
+
+
+
+
+
+/* Калькулятор */
+
+
+#include <iostream> //підключення бібліотек
+
+using namespace std;//Скорочення команд std::cout
+
+void main()
+{
+	int num1, num2, rez;  //оголошуємо змінні для чисел, операції та збереження результату
+	char diya;
+	bool error = false; //змінна для відстеження помилок
+
+	system("chcp 1251"); //підключення укр. мови
+	system("cls");
+
+/* ввід та вивід інформації */
+	cout << "Введіть перше число: ";
+	cin >> num1;
+	cout << "Оберіть дію (+,-,*,/): ";
+	cin >> diya;
+	cout << "Введіть друге число: ";
+	cin >> num2;
+
+	switch(diya) //виконання обраної операції за допомогою switch
+	{
+	case '+':
+		rez = num1 + num2;
+		break;
+	case '-':
+		rez = num1 - num2;
+		break;
+	case '*':
+		rez = num1 * num2;
+		break;
+	case '/':
+		if (num2 != 0) //перевірка на ділення на нуль
+			rez = num1 / num2;
+		else
+			error = true; //якщо операція невідома - помилка
+		break;
+	default:
+		error = true;
+		break;
+	}
+	
+  /* Виведення результату або повідомлення про помилку */ 
+	if (error == false) //Але краще написали просто if(!error)
+		cout << num1 << diya << num2 << '=' << rez << endl;
+	else
+		cout << "Помилка!\n";
+}
